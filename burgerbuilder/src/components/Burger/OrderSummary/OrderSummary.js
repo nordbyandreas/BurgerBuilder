@@ -2,18 +2,19 @@
 
 import React from 'react';
 
-import Auxx from '../../../hoc/Auxx';
+import Auxx from '../../../hoc/Auxx/Auxx';
 import Button from '../../UI/Button/Button';
+
 
 const orderSummary = (props) => {
 
     const ingredientsSummary = Object.keys(props.ingredients)
-        .map(ingKey => {
-            return (
-                <li key={ingKey}>
-                    <span style={{textTransform: 'capitalize'}}>{ingKey}:</span> {props.ingredients[ingKey]}
-                </li>);
-        });
+    .map(ingKey => {
+        return (
+            <li key={ingKey}>
+                <span style={{textTransform: 'capitalize'}}>{ingKey}:</span> {props.ingredients[ingKey]}
+            </li>);
+    });
 
     return(
         <Auxx>
@@ -28,8 +29,7 @@ const orderSummary = (props) => {
             <Button btnType="Success" clicked={props.purchaseContinued}>CONTINUE</Button>
         </Auxx>
     );
-
-};
+}
 
 
 export default orderSummary;
